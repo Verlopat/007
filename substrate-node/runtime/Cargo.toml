@@ -1,0 +1,7 @@
+[package]
+name = "node-runtime"
+version = "3.0.0"
+edition = "2021"
+
+[dependencies]
+pallet-tdg-governance = { version = "3.0.0", default-features = false, path = "../pallets/pallet-tdg-governance" }

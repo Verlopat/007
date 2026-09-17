@@ -1,0 +1,26 @@
+[package]
+name = "pallet-tdg-governance"
+version = "3.0.0"
+edition = "2021"
+
+[dependencies]
+scale-info = { version = "2.0", default-features = false, features = ["derive"] }
+serde = { version = "1.0", optional = true }
+
+frame-support = { git = "https://github.com/paritytech/polkadot-sdk.git", branch = "master" }
+frame-system = { git = "https://github.com/paritytech/polkadot-sdk.git", branch = "master" }
+frame-benchmarking = { git = "https://github.com/paritytech/polkadot-sdk.git", branch = "master", optional = true }
+pallet-timestamp = { git = "https://github.com/paritytech/polkadot-sdk.git", branch = "master" }
+pallet-balances = { git = "https://github.com/paritytech/polkadot-sdk.git", branch = "master" }
+
+[features]
+default = ["std"]
+std = [
+    "serde",
+    "frame-support/std",
+    "frame-system/std",
+    "frame-benchmarking/std",
+    "pallet-timestamp/std",
+    "pallet-balances/std",
+]
+runtime-benchmarks = ["frame-benchmarking"]
